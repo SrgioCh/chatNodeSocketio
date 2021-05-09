@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <title>chat_socket</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar-brand mx-auto text-white font-weight-bold" href="#"
+        >Javascript</a
+      >
+    </nav>
+
+    <div id="form-login" class="container mt-5 p-4">
+      <div class="formulogin bg-dark p-4">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nick name</label>
+            <input type="text" class="form-control" id="nickname" />
+          </div>
+          <p id="error"></p>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="chat" class="container bg-warning" id="contentChat">
+      <div class="row">
+        <div class="col-md-6 mt-4 bg-dark">
+          <div class="card text-primary">
+            <div class="card-header">
+              <h4>let chat</h4>
+            </div>
+            <div id="cuerpoChat" class="card-body"></div>
+
+            <form id="form-message" class="card-footer">
+              <input type="text" class="form-control" id="message" />
+              <button
+                id="but-envio"
+                type="submit"
+                class="btn btn-dark py-1 px-2 ml-3"
+              >
+                <ion-icon class="icon-navigate" name="navigate-sharp"></ion-icon
+                ><span class="ml-2">Enviar</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 justify-content-center align-items-center">
+          <div class="row justify-content-center align-items-center">
+            <div class="list-user col-md-6 card">
+              <div class="card-header bg-dark mx-auto">
+                <h3 class="mx-auto">Users</h3>
+              </div>
+              <div class="card-body">
+                <div id="usersnames"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    >
+    </script>
+    <!-- llamamos al api de socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
